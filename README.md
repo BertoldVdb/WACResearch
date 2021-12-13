@@ -32,7 +32,7 @@ The finished board can be seen here:
 
 If you are not confident soldering such a small chip, it may be possible to solder wires to the usually rather large I2C bus pull-up resistors in the accessory. I didn't try this, make sure to check that the voltage levels are compatible...
 
-The library includes support to access the chip using a MCP2221(A) USB to I2C adapter. This can be another option to make an easy experimental setup. To use this, run the authentication server as follows:
+The library includes support to access the chip using a MCP2221(A) USB to I2C adapter. This can be another option to make an easy experimental setup. At least the 2.0C chip can work with 5V. To use this, run the authentication server as follows:
 `authserver/authserver usb`
 
 ## Software usage
@@ -40,7 +40,7 @@ The library includes support to access the chip using a MCP2221(A) USB to I2C ad
 Connect the WiFi card of your computer to the accessory you want to configure. It will provide an open access point with DHCP. Run the client example as follows:
 
     waclib/examples/client/client -ssid thessid -password thepassword
-Follow the instructions shown on the screen. The device should connect to the network you configure
+Follow the instructions shown on the screen. The device should connect to the network you configure.
 
 ### Receiving configuration from iPhone:
 The first step is setting up an access point that provides the required WAC beacon. A program to encode and decode such beacons is included. Its help is pretty self explanatory:
