@@ -59,9 +59,12 @@ When the hostapd is running you should see your configured accessory parameters 
 Next you need to run the server application. This will handle the actual WAC protocol. Before you continue ensure you have a working MFI chip connected to your workstation in some way. To ensure the chip is working, try the authserver program as it performs an elaborate self-test while initializing the chip. If you see output like this, it is working:
 
 > -> Chip ready: Type=2.0C FirmwareVersion=1 ProtocolVersion=2.0 Signature=20->128
+>
 > -> Registering as 'IPA_xxxxxxxxxxxxxxxxxxx' and '0'
 
-The xxxx will be replaced with the unique serial number of your chip. Proceed to run the WAC server usage command:
+The xxxx will be replaced with the unique serial number of your chip.
+
+Proceed to run the WAC server usage command:
 `waclib/examples/server/server -h`
 
 The parameters have the following function
