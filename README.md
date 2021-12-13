@@ -35,11 +35,20 @@ If you are not confident soldering such a small chip, it may be possible to sold
 The library includes support to access the chip using a MCP2221(A) USB to I2C adapter. This can be another option to make an easy experimental setup. At least the 2.0C chip can work with 5V. To use this, run the authentication server as follows:
 `authserver/authserver usb`
 
+To ensure the chip is working, the library performs an elaborate self-test while initializing the chip. If you see output like this when running the authentication server, it is working:
+
+> -> Chip ready: Type=2.0C FirmwareVersion=1 ProtocolVersion=2.0 Signature=20->128
+>
+> -> Registering as 'IPA_xxxxxxxxxxxxxxxxxxx' and '0'
+
+The xxxx will be replaced with the unique serial number of your chip.
+
 ## Software usage
 ### Configuring a device:
 Connect the WiFi card of your computer to the accessory you want to configure. It will provide an open access point with DHCP. Run the client example as follows:
 
     waclib/examples/client/client -ssid thessid -password thepassword
+
 Follow the instructions shown on the screen. The device should connect to the network you configure.
 
 ### Receiving configuration from iPhone:
@@ -56,13 +65,7 @@ If you are using hostapd to make the access point, simply put this hex string as
 
 When the hostapd is running you should see your configured accessory parameters in the iPhone WiFi settings application.
 
-Next you need to run the server application. This will handle the actual WAC protocol. Before you continue ensure you have a working MFI chip connected to your workstation in some way. To ensure the chip is working, try the authserver program as it performs an elaborate self-test while initializing the chip. If you see output like this, it is working:
-
-> -> Chip ready: Type=2.0C FirmwareVersion=1 ProtocolVersion=2.0 Signature=20->128
->
-> -> Registering as 'IPA_xxxxxxxxxxxxxxxxxxx' and '0'
-
-The xxxx will be replaced with the unique serial number of your chip.
+Next you need to run the server application. This will handle the actual WAC protocol. Before you continue ensure you have a working MFI chip connected to your workstation in some way.
 
 Proceed to run the WAC server usage command:
 `waclib/examples/server/server -h`
