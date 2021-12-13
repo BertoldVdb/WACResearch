@@ -15,6 +15,9 @@ var embedCertAaca2 []byte
 //go:embed "cert_ap1ca.bin"
 var embedCertAp1ca []byte
 
+//go:embed "cert_v3ca.bin"
+var embedCertV3ca []byte
+
 var roots *x509.CertPool
 var intermediates *x509.CertPool
 var rootsOnce sync.Once
@@ -34,6 +37,7 @@ func initCertPool() {
 
 		addCert(embedCertAp1ca)
 		addCert(embedCertAaca2)
+		addCert(embedCertV3ca)
 	})
 }
 
