@@ -28,7 +28,9 @@ When using this breakout board, start the authentication server as follows:
 `authserver/authserver platform:/dev/i2c-2:22 platform:/dev/i2c-3:6:0x10`
 
 The finished board can be seen here:
-![MFI chip breakout board](https://raw.githubusercontent.com/BertoldVdb/WACResearch/master/hardware/breakout.png)Simply mount the de-soldered chip onto the matching footprint and you should be good to go :).
+![MFI chip breakout board](https://raw.githubusercontent.com/BertoldVdb/WACResearch/master/hardware/breakout.png)
+
+Simply mount the de-soldered chip onto the matching footprint and you should be good to go :).
 
 If you are not confident soldering such a small chip, it may be possible to solder wires to the usually rather large I2C bus pull-up resistors in the accessory. I didn't try this, make sure to check that the voltage levels are compatible...
 
